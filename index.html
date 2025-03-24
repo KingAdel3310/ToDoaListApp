@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="min-h-screen flex items-center justify-center">
+    <main class="max-w-md w-full mx-auto p-6 bg-gray-200 rounded-lg shadow-md">
+        <div class="text-2xl font-bold text-center mb-6">To-Do List</div>        
+        <form id="taskForm" class="mb-6 input-section">
+            <div class="flex gap-2">
+                <input
+                    id="task"
+                    type="text"
+                    class="flex-1 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Add task..."
+                    required
+                />
+                <button type="submit" id="add-btn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    Add
+                </button>
+                <button
+                    type="button"
+                    class="add bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                    id="update-button"
+                    style="display: none"
+                    >
+                    Update
+                </button>
+            </div>
+        </form>
+        <div class="todos mb-6">
+            <h2 class="text-lg font-semibold mb-2">Tasks</h2>
+            <p><strong>Status:</strong> <span class="text-yellow-600">Pending</span></p>
+            <ul id="taskList" class="list-none space-y-4 mt-2">
+                <li class="taskTemplate hidden">
+                    <div class="flex items-center gap-2 p-2 bg-gray-50 rounded">
+                        <input type="checkbox" class="w-5 h-5">
+                        <span class="content flex-1">Task content goes here...</span>
+                        <span class="content flex-1">Date</span>
+                        <button class="updateTask text-blue-500 hover:text-blue-700">Edit</button>
+                        <button class="deleteTask text-red-500 hover:text-red-700">Delete</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h2 class="text-lg font-semibold mb-2">Completed Tasks</h2>
+            <p><strong>Status:</strong> <span class="text-green-600">Completed</span></p>
+            <ul id="completedTaskList" class="space-y-4 mt-2 list-none">
+            </ul>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
